@@ -1,0 +1,84 @@
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="volunteer-container">
+        <div class="col-12">
+            <p>Q1. 初対面の人とも会話を通して関係を気付くことが得意ですか？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question1, "5", id: "custom_id1" %>
+            <label for="custom_id1">とても当てはまる</label>
+            <%= f.radio_button :question1, "4", id: "custom_id2" %>
+            <label for="custom_id2">やや当てはまる</label>
+            <%= f.radio_button :question1, "3", id: "custom_id3" %>
+            <label for="custom_id3">どちらともいえない</label>
+            <%= f.radio_button :question1, "2", id: "custom_id4" %>
+            <label for="custom_id4">あまり当てはまらない</label>
+            <%= f.radio_button :question1, "1", id: "custom_id5" %>
+            <label for="custom_id5">まったく当てはまらない</label>
+        </div>
+        <div class="col-12">
+            <p>Q2. 相手の話を最後まで聞き、気持ちや立場を理解しようとすることは得意ですか？</p>
+        </div> 
+        <div class="col-6">
+            <%= f.radio_button :question2, "5", id: "custom_id6" %>
+            <label for="custom_id6">とても当てはまる</label>
+            <%= f.radio_button :question2, "4", id: "custom_id7" %>
+            <label for="custom_id7">やや当てはまる</label>
+            <%= f.radio_button :question2, "3", id: "custom_id8" %>
+            <label for="custom_id8">どちらともいえない</label>
+            <%= f.radio_button :question2, "2", id: "custom_id9" %>
+            <label for="custom_id9">あまり当てはまらない</label>
+            <%= f.radio_button :question2, "1", id: "custom_id10" %>
+            <label for="custom_id10">まったく当てはまらない</label>
+        </div>   
+        <div class="col-12">
+            <p>Q3. 困っていたり迷っている人を見ると、自分から声をかけて手助けしたくなりますか？…</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question3, "5", id: "custom_id11" %>
+            <label for="custom_id11">とても当てはまる</label>
+            <%= f.radio_button :question3, "4", id: "custom_id12" %>
+            <label for="custom_id12">やや当てはまる</label>
+            <%= f.radio_button :question3, "3", id: "custom_id13" %>
+            <label for="custom_id13">どちらともいえない</label>
+            <%= f.radio_button :question3, "2", id: "custom_id14" %>
+            <label for="custom_id14">あまり当てはまらない</label>
+            <%= f.radio_button :question3, "1", id: "custom_id15" %>
+            <label for="custom_id15">まったく当てはまらない</label>
+        </div>
+    
+        <div class="col-12">
+            <p>Q4. 年齢や背景が異なる人と関わることに興味や楽しさを感じますか？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question4, "5", id: "custom_id16" %>
+            <label for="custom_id16">とても当てはまる</label>
+            <%= f.radio_button :question4, "4", id: "custom_id17" %>
+            <label for="custom_id17">やや当てはまる</label>
+            <%= f.radio_button :question4, "3", id: "custom_id18" %>
+            <label for="custom_id18">どちらともいえない</label>
+            <%= f.radio_button :question4, "2", id: "custom_id19" %>
+            <label for="custom_id19">あまり当てはまらない</label>
+            <%= f.radio_button :question4, "1", id: "custom_id20" %>
+            <label for="custom_id20">まったく当てはまらない</label>
+        </div>
+
+        <div class="col-12">
+            <p>Q5. みんなと協力して1つの目標を達成する活動にやりがいを感じますか？</p>
+        </div>
+        <div class="col-6">
+            <%= f.radio_button :question5, "5", id: "custom_id21" %>
+            <label for="custom_id21">とても当てはまる</label>
+            <%= f.radio_button :question5, "4", id: "custom_id22" %>
+            <label for="custom_id22">やや当てはまる</label>
+            <%= f.radio_button :question5, "3", id: "custom_id23" %>
+            <label for="custom_id23">どちらともいえない</label>
+            <%= f.radio_button :question5, "2", id: "custom_id24" %>
+            <label for="custom_id24">あまり当てはまらない</label>
+            <%= f.radio_button :question5, "1", id: "custom_id25" %>
+            <label for="custom_id25">まったく当てはまらない</label>
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit " 結果 " %>
+    </div>
+<% end %>

@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+<h3>新規投稿ページ</h3>
+<div class="post-container">
+  <p class="title">投稿フォーム</p>
+  <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
+
+  #ボランティアの分類もう一個増やしたい
+    <div class="field">
+      <%= f.label :ボランティアの分類  %>
+      <%= f.select :genre, 
+      [["福祉・教育サポート", "福祉・教育サポート"], 
+      ["地域交流・運営", "地域交流・運営"], 
+      ["専門スキル活用", "専門スキル活用"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :タイトル %>
+      <%= f.text_field :title, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :活動風景🖼️ %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :学生の規模👥  %>
+      <%= f.select :student, 
+      [["少ない", "少ない"], 
+      ["普通", "普通"], 
+      ["多い", "多い"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :場所📍 %>
+      <%= f.text_field :place, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :内容・詳細  %>
+      <%= f.text_area :content, :size => "30x2" %>
+    </div>
+
+    <div class='form-group'>
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+              <div class='form-check'>
+                  <%= tag.label class: 'form-check-label' do %>
+                      <%= tag.check_box class: 'form-check-input' %>
+                      <%= tag.text %>
+                  <% end %>
+              </div>
+          <% end %>
+    </div>
+    
+  <%= f.submit "投稿する" %>
+  <br>
+  <% end %>
+</div>
+
+<%= link_to "一覧に戻る", tweets_path %>

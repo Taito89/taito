@@ -1,0 +1,73 @@
+<h3>一覧ページ</h3>
+
+<h3>投稿を検索</h3>
+<%= form_tag({ controller: "tweets", action: "index" }, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する' %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_tweet_path %>
+
+<%= stylesheet_link_tag 'index', :media => "all" %> #8/28追記
+
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <p><%= t.user.email %></p>
+      <p><%= t.genre %></p>
+      <p><%= t.title %></p>
+      <p><%= t.student %></p>
+      <p><%= t.place %></p>
+      <p><%= t.content %></p>
+      
+      <% if t.image.attached? %>
+            <%= image_tag t.image, size: '250x200'%>
+        <% end %>
+
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+          <%= button_to tweet_taito_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
+               <i class="fas fa-heart"></i><%= t.taito_likes.count %>
+                <% end %>
+            <% else %>
+          <%= button_to tweet_taito_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
+                <i class="fas fa-heart"></i><%= t.taito_likes.count %>
+
+        <% end %>
+      <% end %>
+      <% else %>
+               <i class="fas fa-heart"></i><%= t.taito_likes.count %>
+      <% end %>
+
+    <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+       <% Tag.all.each do |t| %>
+          <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+       <% end %>
+       <%= submit_tag '検索' %>
+    <% end %>
+    <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+        <%= text_field_tag :tag %>
+        <%= submit_tag 'タグを追加' %>
+    <% end %>
+     <div class="main-box">
+        <div class="left-container"><%= t.content %></div>
+        <div class="right-container">
+          <p>投稿日: <%= t.created_at %></p>
+          <%= link_to "詳細へ", tweet_path(t.id) %>
+          <%= link_to "編集する", edit_tweet_path(t.id) %>
+          <%= button_to "削除する", tweet_path(t.id), method: :delete %>
+        </div>
+     </div>
+    </div>
+        <p class="time"><%= t.created_at %></p>
+  </div>
+  <% end %>
+</div>
+
+#背景画像のスライドショー
+<div class="slideshow">
+    <div class="slideshow-image" style="background-image: url('<%= asset_path 'gazou1.jpg' %>');"></div>
+    <div class="slideshow-image" style="background-image: url('<%= asset_path 'gazou2.jpg' %>');"></div>
+    <div class="slideshow-image" style="background-image: url('<%= asset_path 'gazou3.jpg' %>');"></div>
+    <div class="slideshow-image" style="background-image: url('<%= asset_path 'gazou4.jpg' %>');"></div>
+</div>
