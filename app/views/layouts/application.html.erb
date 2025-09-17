@@ -22,6 +22,7 @@
   <h1>Volunteer Community University Volunteer</h1>
   <div class="header-list">
    <ul>
+    <%= link_to "診断を始める", new_perfume_path, class: "link" %>
     <% if user_signed_in? %>
      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
     <% else %>
