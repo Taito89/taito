@@ -27,12 +27,12 @@ h3 {
 
 
 .slideshow {
-  position: relative;  // relative でOK
-  top: 0;              // 一番上に
+  position: relative;
+  top: 0;
   left: 0;
-  width: 1600px;       // 元のサイズを維持
+  width: 1600px;
   height: 800px;
-  margin: 0 auto;      // 中央寄せしたいならこれを追加
+  margin: 0 auto;
 }
 
 .slideshow-image {

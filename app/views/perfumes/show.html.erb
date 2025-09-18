@@ -15,21 +15,25 @@
 <div class="perfume-container">
   <% if total_score >= 17 %>
     <h3>福祉・教育サポート型</h3>
+    <%= image_tag "授業イラスト.png", class: "result-image" %>
     <p>人と深く関わる活動に非常に高い適性があります。</p>
     <p>高齢者支援、子ども支援、国際交流などが特におすすめです。</p>
 
   <% elsif total_score >= 13 %>
     <h3>地域交流・運営型</h3>
+    <%= image_tag "イベント.png", class: "result-image" %>
     <p>人と関わる活動と、運営・企画の両方で力を発揮できます。</p>
     <p>地域イベント、啓発活動、防災訓練などに向いています。</p>
 
   <% elsif total_score >= 8 %>
     <h3>専門スキル活用型</h3>
+    <%= image_tag "ITパソコン.png", class: "result-image" %>
     <p>人との関わりもこなしつつ、スキルを活かす役割に適性があります。</p>
     <p>IT支援、広報、翻訳、デザインなど専門性を活かす活動がおすすめです。</p>
 
   <% else %>
     <h3>環境・間接支援型</h3>
+    <%= image_tag "環境問題.png", class: "result-image" %>
     <p>直接交流よりも環境整備や裏方作業で力を発揮します。</p>
     <p>清掃活動、物資管理、施設整備などが向いています。</p>
   <% end %>
