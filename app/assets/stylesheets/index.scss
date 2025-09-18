@@ -1,27 +1,22 @@
-
 .tweets-container {
   width: 50%;
   margin: 10px auto;
 }
-
 h3 {
   width: 100px;
   margin: 30px auto;
   text-align: center;
 }
-
 .tweet {
   border-top: solid #6FCF97;
   margin-top: 10px;
   padding-top: 20px;
 }
-
 .main-box {
   margin: 5px 0;
   display: flex;
   justify-content: space-between;
 }
-
 .time {
   display: flex;
   justify-content: flex-end;
@@ -29,13 +24,15 @@ h3 {
 
 
 
+
+
 .slideshow {
-  position: absolute;  /* ページ上で絶対配置 */
-  top: 0;              /* ページの一番上 */
-  left: 0;             /* ページの左端 */
-  width: 100%;         /* 横幅いっぱい */
-  height: 800px;       /* 高さはそのまま */
-  z-index: 1;          /* 他の要素より前面に */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 1600px;
+  height: 800px;
+  margin: 0 auto;
 }
 
 .slideshow-image {
@@ -67,9 +64,9 @@ h3 {
 }
 
 @keyframes slideshow {
-  0%    { opacity: 0; }
-  11.1% { opacity: 1; }
-  33.3% { opacity: 1; }
-  44.4% { opacity: 0; }
-  100%  { opacity: 0; }
+  0%    {opacity: 0; }
+  11.1% {opacity: 1; }
+  33.3% {opacity: 1; }
+  44.4% {opacity: 0; }
+  100%  {opacity: 0; }
 }
